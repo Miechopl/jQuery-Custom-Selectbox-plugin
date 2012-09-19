@@ -1,0 +1,92 @@
+/*! Copyright (c) 2012 Mieszko Domagała (http://miecho.pl)
+ * Licensed under the MIT License (LICENSE.txt).
+ *
+ * Version: 1.0.0
+ * 
+ * Requires: 1.8.1+
+ */
+.customSelectbox {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #9a9a9a;
+  border-radius: 5px;
+  color: #3d3d3d;
+  position: relative;
+  font-size: 11px;
+  cursor: default;
+}
+.customSelectbox:hover {
+  box-shadow: 0 0 5px rgba(101, 231, 226, 0.9);
+  border: 1px solid #898989;
+}
+.customSelectbox.customSelectbox_opened {
+  border-radius: 5px 5px 0 0;
+  box-shadow: none;
+}
+.customSelectbox_display_container {
+  padding: 3px 37px 3px 7px;
+}
+.customSelectbox_display_container .customSelectbox_icon_bg {
+  width: 21px;
+  height: 22px;
+  border-left: 1px solid #9a9a9a;
+  border-bottom: 1px solid #9a9a9a;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  background: #dfdfdf;
+  background: -moz-linear-gradient(top, #dfdfdf 0%, #d6d6d6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dfdfdf), color-stop(100%,#d6d6d6));
+  background: -webkit-linear-gradient(top, #dfdfdf 0%,#d6d6d6 100%);
+  background: -o-linear-gradient(top, #dfdfdf 0%,#d6d6d6 100%);
+  background: -ms-linear-gradient(top, #dfdfdf 0%,#d6d6d6 100%);
+  background: linear-gradient(to bottom, #dfdfdf 0%,#d6d6d6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfdfdf', endColorstr='#d6d6d6',GradientType=0 );
+  box-shadow: 0 1px 0 #e6e6e6 inset;
+  border-radius: 0 5px 5px 0;
+}
+.customSelectbox.customSelectbox_opened .customSelectbox_display_container .customSelectbox_icon_bg {
+  border-radius: 0 5px 0 0;
+}
+.customSelectbox_display_container .customSelectbox_icon {
+  width: 16px;
+  height: 13px;
+  background: url(../img/arrows.png) no-repeat 0 0;
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  z-index: 5;
+}
+.customSelectbox.customSelectbox_opened .customSelectbox_display_container .customSelectbox_icon {
+  background-position: 0 -35px;
+}
+.customSelectbox_container {
+  border: 1px solid #898989;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  z-index: 3;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  margin: 0 0 0 -1px;
+  padding: 0;
+  list-style: none;
+}
+.customSelectbox_container li {
+  padding: 5px 0;
+  margin: 0 7px;
+  border-bottom: 1px solid #cdcdcd;
+  cursor: pointer;
+  white-space: nowrap;
+  width: auto;
+}
+.customSelectbox_container li:last-child {
+  border-bottom: none;
+}
+.customSelectbox_container li:hover {
+  color: #4cabc4;
+}
+.customSelectbox_container li.customSelectbox_this_is_selected {
+  font-weight: bold;
+}
