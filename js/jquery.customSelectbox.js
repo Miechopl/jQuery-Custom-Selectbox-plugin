@@ -44,7 +44,7 @@
 					var $selected_index = $(this).attr('data-option_id');
 					var $selected_html = $(this).html();
 					$select.prop('selectedIndex', $selected_index);
-					$select.change();
+					$select.trigger('custom_change');
 					$selected_div.html($selected_html);
 					$list_container.slideUp();
 					$new_select.removeClass('customSelectbox_opened');
@@ -62,6 +62,9 @@
 						$list_container.slideUp();
 						$new_select.removeClass('customSelectbox_opened');
 					}
+				});
+				$select.bind('custom_change', function() {
+					$(this).trigger('change');
 				});
 			});
         }
