@@ -1,7 +1,7 @@
 /*! Copyright (c) 2012 Mieszko Domagała (http://miecho.pl)
  * Licensed under the MIT License (LICENSE.txt).
  *
- * Version: 1.0.1
+ * Version: 1.0.2
  * 
  * Requires: 1.8.1+
  */

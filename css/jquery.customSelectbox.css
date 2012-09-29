@@ -9,18 +9,15 @@
   display: inline-block;
   background: #fff;
   border: 1px solid #9a9a9a;
-  border-radius: 5px;
   color: #3d3d3d;
   position: relative;
   font-size: 11px;
   cursor: default;
 }
 .customSelectbox:hover {
-  box-shadow: 0 0 5px rgba(101, 231, 226, 0.9);
-  border: 1px solid #898989;
+  border: 1px solid #777;
 }
 .customSelectbox.customSelectbox_opened {
-  border-radius: 5px 5px 0 0;
   box-shadow: none;
 }
 .customSelectbox_display_container {
@@ -44,10 +41,6 @@
   background: linear-gradient(to bottom, #dfdfdf 0%,#d6d6d6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfdfdf', endColorstr='#d6d6d6',GradientType=0 );
   box-shadow: 0 1px 0 #e6e6e6 inset;
-  border-radius: 0 5px 5px 0;
-}
-.customSelectbox.customSelectbox_opened .customSelectbox_display_container .customSelectbox_icon_bg {
-  border-radius: 0 5px 0 0;
 }
 .customSelectbox_display_container .customSelectbox_icon {
   width: 16px;
@@ -68,7 +61,6 @@
   left: 0px;
   z-index: 3;
   background: #fff;
-  border-radius: 0 0 5px 5px;
   margin: 0 0 0 -1px;
   padding: 0;
   list-style: none;
@@ -85,7 +77,7 @@
   border-bottom: none;
 }
 .customSelectbox_container li:hover {
-  color: #4cabc4;
+  color: #111;
 }
 .customSelectbox_container li.customSelectbox_this_is_selected {
   font-weight: bold;
