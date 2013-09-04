@@ -1,7 +1,7 @@
 /*! Copyright (c) 2012 Mieszko Domagała (http://miecho.pl)
  * Licensed under the MIT License (LICENSE.txt).
  *
- * Version: 1.0.2
+ * Version: 1.0.3
  * 
  * Requires: 1.8.1+
  */
@@ -44,6 +44,7 @@
 					var $selected_index = $(this).attr('data-option_id');
 					var $selected_html = $(this).html();
 					$select.prop('selectedIndex', $selected_index);
+					$($select.find('option').removeAttr('selected')[$selected_index]).attr('selected', 'selected');
 					$select.trigger('custom_change');
 					$selected_div.html($selected_html);
 					$list_container.slideUp();
