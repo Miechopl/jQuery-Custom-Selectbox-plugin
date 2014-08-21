@@ -2,10 +2,10 @@
  * Licensed under the MIT License (LICENSE.txt).
  *
  * Version: 1.0.3
- * 
+ *
  * Requires: 1.8.1+
  */
- 
+
 (function($){
 	$.fn.extend({
 		customSelectbox: function() {
@@ -30,7 +30,7 @@
 				$select_iconbg.appendTo($selected_display);
 				$selected_display.appendTo($new_select);
 				$list_container.appendTo($new_select);
-				$selected_display.click(function() {
+				$selected_display.bind('click', function() {
 					if ($new_select.hasClass('customSelectbox_opened')) {
 						$list_container.slideUp();
 						$new_select.removeClass('customSelectbox_opened');
@@ -40,12 +40,11 @@
 					}
 				});
 				$select.after($new_select);
-				$list_container.find('li').click(function() {
+				$list_container.find('li').bind('click', function() {
 					var $selected_index = $(this).attr('data-option_id');
 					var $selected_html = $(this).html();
 					$select.prop('selectedIndex', $selected_index);
 					$($select.find('option').removeAttr('selected')[$selected_index]).attr('selected', 'selected');
-					$select.trigger('custom_change');
 					$selected_div.html($selected_html);
 					$list_container.slideUp();
 					$new_select.removeClass('customSelectbox_opened');
@@ -57,7 +56,10 @@
 				$new_select.width($new_select.find('ul').width()+30);
 				$new_select.find('ul').width($new_select.width());
 				var $selected_index = $select.prop('selectedIndex');
-				$('li[data-option_id='+$selected_index+']').click();
+				$list_container.find('li[data-option_id='+$selected_index+']').click();
+				$list_container.find('li').bind('click', function() {
+					$select.trigger('custom_change');
+				});
 				$(document).mousedown(function(e) {
 					if($(e.target).parents('#'+$new_id).length==0 && !$(e.target).is('#'+$new_id)) {
 						$list_container.slideUp();
